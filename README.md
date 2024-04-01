@@ -1,6 +1,8 @@
 # zerowaste
 
-[徳島県上勝町リサイクル分別オープンデータ](https://github.com/code4fukui/zerowaste/blob/main/zerowaste_kamikatsu.csv)
+- [徳島県上勝町リサイクル分別オープンデータ](https://github.com/code4fukui/zerowaste/blob/main/zerowaste_kamikatsu.csv)
+- [ウェイストオープンデータ](https://code4fukui.github.io/zerowaste/)
+- [単価未記載品目](https://code4fukui.github.io/zerowaste/noprice.html)
 
 ## 活用アプリ
 

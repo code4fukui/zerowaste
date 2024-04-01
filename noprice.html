@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:">
+<title>単価未記載品目</title>
+<h1>単価未記載品目</h1>
+<main id=main></main>
+<script type="module">
+import { CSV } from "https://js.sabae.cc/CSV.js";
+
+const data = await CSV.fetchJSON("./zerowaste_kamikatsu.csv");
+for (const d of data) {
+  if ((d.町負担 == "1" || d.町のお金になる == "1") && d.kg単価 == "") {
+    const div = document.createElement("div");
+    div.textContent = d.品目;//  + (d.町負担 == "1" ? "（町負担）" : "（町のお金になる）");
+    main.appendChild(div);
+  }
+}
+</script>
