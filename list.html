@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:">
+<title>上勝町ウェイストリスト</title>
+<h1>上勝町ウェイストリスト</h1>
+<main id=main></main>
+<script type="module">
+import { CSV } from "https://js.sabae.cc/CSV.js";
+
+const data = await CSV.fetchJSON("./zerowaste_kamikatsu.csv");
+for (const d of data) {
+  let type = "other";
+  if (d.町負担 == "1" && parseInt(d.kg単価) > 0) {
+    type = "out";
+  } else if (d.町のお金になる == "1" && parseInt(d.kg単価) > 0) {
+    type = "in";
+  }
+  const names = {
+    in: "入",
+    out: "出",
+    other: "-",
+  };
+  const div = `<div class=${type}>
+    <span class=flg>${names[type]}</span><span class=name>${d.品目}</span><span class=unit>単価: ${d.kg単価}円</span>
+  </div>`;
+  main.innerHTML += div;
+}
+</script>
+
+<style>
+body {
+  text-align: center;
+}
+.in {
+  color: red;
+  border-color: red;
+}
+.out {
+  color: blue;
+  border-color: blue;
+}
+.other {
+  color: gray;
+  border-color: gray;
+}
+main > div {
+  display: inline-block;
+  text-align: left;
+  border: 5px solid;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  height: 150px;
+  vertical-align: top;
+}
+.flg {
+  font-size: 200%;
+  display: block;
+}
+.name {
+  font-weight: bold;
+  font-size: 150%;
+}
+.unit {
+  display: block;
+}
+</style>
