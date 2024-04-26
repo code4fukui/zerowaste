@@ -2,6 +2,7 @@
 
 - [徳島県上勝町リサイクル分別オープンデータ](https://github.com/code4fukui/zerowaste/blob/main/zerowaste_kamikatsu.csv)
 - [ウェイストオープンデータ](https://code4fukui.github.io/zerowaste/)
+- [ウェイストリスト](https://code4fukui.github.io/zerowaste/list.html)
 - [単価未記載品目](https://code4fukui.github.io/zerowaste/noprice.html)
 
 ## 活用アプリ
